@@ -25,6 +25,9 @@ researcher = Agent(
     role='高级研究员',  # 角色
     goal='发现{topic}的突破性技术',  # 目标
     backstory='在好奇心的驱使下，你处于创新的前沿，渴望探索和分享可以改变世界的知识。',  # 背景
+    llm=ChatOpenAI(
+        model="gpt-3.5-turbo",
+    ),
     tools=[search_tool],  # 工具
     memory=True,
     allow_delegation=True,
@@ -35,7 +38,10 @@ researcher = Agent(
 writer = Agent(
     role='作家',
     goal='讲述有关{topic}的引人入胜的科技故事',
-    backstory='你是一位热爱科技的作家，渴望将最新的科技发现转化为引人入胜的故事。',
+    backstory='你是一位热爱科技的中文作家，渴望将最新的科技发现转化为引人入胜的故事。',
+    llm=ChatOpenAI(
+        model="gpt-3.5-turbo",
+    ),
     tools=[search_tool],
     memory=True,
     allow_delegation=True,
@@ -65,7 +71,7 @@ research_task = Task(
 # 攥写任务, 具备语言模型配置
 write_task = Task(
     description=(
-        "撰写一篇关于{topic}的富有洞察力的文章。"
+        "使用中文撰写一篇关于{topic}的富有洞察力的文章。"
         "关注最新趋势及其对行业的影响。"
         "这篇文章应该易于理解、引人入胜且积极。"
     ),
