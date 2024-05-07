@@ -1,3 +1,9 @@
 crewai==0.28.8
 crewai_tools==0.2.3
 agentops==0.1.8
+
+python-dotenv~=1.0.0
+requests~=2.31.0
+serpapi~=0.1.5
+beautifulsoup4~=4.12.3
+unstructured~=0.13.6
