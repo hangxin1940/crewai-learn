@@ -1,7 +1,7 @@
 from crewai import Crew
 
-from agents import EmailFilterAgents
-from tasks import EmailFilterTasks
+from crew.agents import EmailFilterAgents
+from crew.tasks import EmailFilterTasks
 
 
 class EmailFilterCrew:
@@ -40,3 +40,5 @@ class EmailFilterCrew:
                 f"- Snippet: {email['snippet']}",
                 f"- From: {email['sender']}",
             ]
+            emails_string.append("\n".join(arr))
+        return "\n".join(emails_string)

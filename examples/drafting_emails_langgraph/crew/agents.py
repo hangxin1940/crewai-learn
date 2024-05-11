@@ -5,7 +5,7 @@ from langchain_community.agent_toolkits import GmailToolkit
 from langchain_community.tools import GmailGetThread
 from langchain_community.tools.tavily_search import TavilySearchResults
 
-from tools import CreateDraftTool
+from crew.tools import CreateDraftTool
 
 
 class EmailFilterAgents:
@@ -24,8 +24,26 @@ class EmailFilterAgents:
                 """
             ),
             tools=[
-                GmailGetThread(api_resource=self.gmail.api_resource),
-                TavilySearchResults()
+                GmailGetThread(api_resource=self.gmail.api_resource),  # 用于拉取邮件
+                TavilySearchResults()  # 用于搜索邮件内容的相关事实
+            ],
+            verbose=True,
+            allow_delegation=False,
+        )
+
+    def email_action_agent(self):
+        return Agent(
+            role='电子邮件行动专家',
+            goal='识别需要采取行动的电子邮件并编制其 id 列表',
+            backstory=dedent(
+                """
+                凭借对细节的敏锐洞察力和理解上下文的技巧，你擅长识别需要立即采取行动的电子邮件。
+                你的技能包括根据电子邮件的内容和上下文来解释电子邮件的紧迫性和重要性。
+                """
+            ),
+            tools=[
+                GmailGetThread(api_resource=self.gmail.api_resource),  # 用于拉取邮件
+                TavilySearchResults()  # 用于搜索邮件内容的相关事实
             ],
             verbose=True,
             allow_delegation=False,
@@ -42,9 +60,9 @@ class EmailFilterAgents:
                 """
             ),
             tools=[
-                TavilySearchResults(),
+                TavilySearchResults(),  # 用于搜索邮件内容的相关事实
                 GmailGetThread(api_resource=self.gmail.api_resource),
-                CreateDraftTool.create_draft
+                CreateDraftTool.create_draft  # 创建草稿
             ],
             verbose=True,
             allow_delegation=False,

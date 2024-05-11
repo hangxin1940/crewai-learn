@@ -10,9 +10,13 @@ class Nodes:
         self.gmail = GmailToolkit()
 
     def check_email(self, state):
+        """
+        检查新邮件节点
+        当前节点并不会改变状态, 但会从状态中匹配邮件是否已被处理
+        """
         print("# 检查新邮件")
         search = GmailSearch(api_resource=self.gmail.api_resource)
-        emails = search('after:newer_than:1d')
+        emails = search('after:newer_than:100d')
         checked_emails = state['checked_emails_ids'] if state['checked_emails_ids'] else []
         thread = []
         new_emails = []
@@ -35,11 +39,17 @@ class Nodes:
         }
 
     def wait_next_run(self, state):
+        """
+        轮询等待节点
+        """
         print("## 等待60秒")
         time.sleep(60)
         return state
 
     def new_emails(self, state):
+        """
+        此节点检查state的新邮件数量,会更改状态
+        """
         if len(state['emails']) == 0:
             print("## 没有新邮件")
             return "end"
