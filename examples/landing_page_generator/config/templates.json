@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Spotlight",
+    "theme": "Personal Website Template",
+    "folder": "tailwindui-spotlight/spotlight-js",
+    "description": "一个非常棒的个人网站，你实际上会受到启发在上面发布内容"
+  },
+  {
+    "name": "Protocol",
+    "theme": "API Reference Template",
+    "folder": "tailwindui-protocol/protocol-js",
+    "description": "可能是你见过的最好的 API 文档网站"
+  },
+  {
+    "name": "Commit",
+    "theme": "Changelog Template",
+    "folder": "tailwindui-commit/commit-js",
+    "description": "使用这个漂亮的变更日志模板分享你正在进行的工作"
+  },
+  {
+    "name": "Primer",
+    "theme": "Info Product Template",
+    "folder": "tailwindui-primer/primer-js",
+    "description": "你的第一门课程或电子书的精美登陆页面"
+  },
+  {
+    "name": "Studio",
+    "theme": "Agency Template",
+    "folder": "tailwindui-studio/studio-js",
+    "description": "使用这个复杂的代理模板展示你的工作并寻找新客户"
+  },
+  {
+    "name": "Salient",
+    "theme": "Template for SaaS products",
+    "folder": "tailwindui-salient/salient-js",
+    "description": "宣布你的下一个重要产品的 SaaS 登陆页面."
+  },
+  {
+    "name": "Transmit",
+    "theme": "Podcast Template",
+    "folder": "tailwindui-transmit/transmit-js",
+    "description": "适合任何节目的干净专业的播客模板."
+  },
+  {
+    "name": "Pocket",
+    "theme": "App Marketing Template",
+    "folder": "tailwindui-pocket/pocket-js",
+    "description": "适合你令人兴奋的新移动应用程序的完美网站模板."
+  },
+  {
+    "name": "Syntax",
+    "theme": "Documentation Template",
+    "folder": "tailwindui-syntax/syntax-js",
+    "description": "使用此文档模板对你的用户进行时尚教育"
+  },
+  {
+    "name": "Keynote",
+    "theme": "Conference / Meetup Template",
+    "folder": "tailwindui-keynote/keynote-js",
+    "description": "使用这个引人注目的模板来启动你的下一次会议或聚会。."
+  }
+]
